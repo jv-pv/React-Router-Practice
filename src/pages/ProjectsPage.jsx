@@ -1,6 +1,6 @@
 // src/pages/ProjectsPage.jsx
 
-// import projectsData from "../projects-data.json"
+import { Link } from "react-router-dom";
 
 function ProjectsPage (props) {
   return (
@@ -8,8 +8,10 @@ function ProjectsPage (props) {
       <h2>Projects</h2>
       {props.projects.map((project) => {
         return (
-          <div key={project.id} className="project">
-            <h3>{project.name}</h3>
+          <div key={project._id} className="project">
+            <Link to={`/projects/${project._id}`}>
+                <h3>{project.name}</h3>
+            </Link>
             <p>{project.technologies}</p>
           </div>
         );
